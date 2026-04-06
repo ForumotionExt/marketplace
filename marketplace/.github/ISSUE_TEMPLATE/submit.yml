@@ -1,0 +1,60 @@
+name: "Marketplace Submission"
+description: "Submit a Widget, Plugin, or Theme for the FME Marketplace"
+labels: [submission]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Widget
+        - Plugin
+        - Theme
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: "Display name of your submission."
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: "Short description (in Romanian for widgets/plugins)."
+    validations:
+      required: true
+  - type: dropdown
+    id: target
+    attributes:
+      label: Target
+      options:
+        - ACP
+        - Forum
+        - Both
+      description: "Only for widgets."
+    validations:
+      required: false
+  - type: textarea
+    id: code
+    attributes:
+      label: Code or Link to Repo
+      description: "Paste your code or provide a link to your repository."
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author Name
+      description: "Your name or team name."
+    validations:
+      required: true
+  - type: textarea
+    id: readme
+    attributes:
+      label: README.md
+      description: "Optional: Additional documentation or usage instructions."
+    validations:
+      required: false

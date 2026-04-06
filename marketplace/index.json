@@ -1,0 +1,149 @@
+{
+  "updatedAt": "2026-04-06T00:00:00Z",
+  "widgets": [
+    {
+      "id": "acp-back-to-top",
+      "name": "ACP Back to Top",
+      "description": "Buton flotant de scroll sus, apare automat sub 300px",
+      "author": "FME Team",
+      "file": "widgets/acp/acp-back-to-top.js",
+      "target": "acp",
+      "status": "stable",
+      "version": "1.0",
+      "stars": 5,
+      "tags": ["acp", "scroll", "navigation", "ui"]
+    },
+    {
+      "id": "acp-clock",
+      "name": "ACP Clock",
+      "description": "Ceas live în bara de sus a ACP-ului, actualizare la fiecare secundă",
+      "author": "FME Team",
+      "file": "widgets/acp/acp-clock.js",
+      "target": "acp",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "acp-confirm-dangerous",
+      "name": "ACP Confirm Dangerous",
+      "description": "Interceptează formularele cu acțiuni periculoase (delete/ban/purge)",
+      "author": "FME Team",
+      "file": "widgets/acp/acp-confirm-dangerous.js",
+      "target": "acp",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "acp-quick-search",
+      "name": "ACP Quick Search",
+      "description": "Casetă de căutare deasupra tabelelor mari cu filtrare live pe rânduri",
+      "author": "FME Team",
+      "file": "widgets/acp/acp-quick-search.js",
+      "target": "acp",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "acp-word-counter",
+      "name": "ACP Word Counter",
+      "description": "Contor caractere/cuvinte sub fiecare textarea din ACP",
+      "author": "FME Team",
+      "file": "widgets/acp/acp-word-counter.js",
+      "target": "acp",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "forum-announce-ticker",
+      "name": "Forum Announce Ticker",
+      "description": "Bandă de anunțuri care defilează automat în partea de sus",
+      "author": "FME Team",
+      "file": "widgets/forum/forum-announce-ticker.js",
+      "target": "forum",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "forum-back-to-top",
+      "name": "Forum Back to Top",
+      "description": "Buton animat de scroll sus cu slide-in/out",
+      "author": "FME Team",
+      "file": "widgets/forum/forum-back-to-top.js",
+      "target": "forum",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "forum-dark-mode-toggle",
+      "name": "Forum Dark Mode Toggle",
+      "description": "Comutator dark mode pentru forum cu persistență cookie",
+      "author": "FME Team",
+      "file": "widgets/forum/forum-dark-mode-toggle.js",
+      "target": "forum",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "forum-external-links",
+      "name": "Forum External Links",
+      "description": "Deschide automat link-urile externe în tab nou + rel=noopener",
+      "author": "FME Team",
+      "file": "widgets/forum/forum-external-links.js",
+      "target": "forum",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "forum-post-word-count",
+      "name": "Forum Post Word Count",
+      "description": "Contor caractere sub textarea de postare cu status limită 5000",
+      "author": "FME Team",
+      "file": "widgets/forum/forum-post-word-count.js",
+      "target": "forum",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "forum-reading-progress",
+      "name": "Forum Reading Progress",
+      "description": "Bară de progres fixă la top (3px) pentru citire pagină",
+      "author": "FME Team",
+      "file": "widgets/forum/forum-reading-progress.js",
+      "target": "forum",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "forum-welcome-banner",
+      "name": "Forum Welcome Banner",
+      "description": "Banner CTA pentru vizitatori, dismissibil cu remember",
+      "author": "FME Team",
+      "file": "widgets/forum/forum-welcome-banner.js",
+      "target": "forum",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "fme-toast-notifications",
+      "name": "FME Toast Notifications",
+      "description": "Sistem global de notificări toast: FMEToast.show(msg, type)",
+      "author": "FME Team",
+      "file": "widgets/both/fme-toast-notifications.js",
+      "target": "both",
+      "status": "stable",
+      "version": "1.0"
+    },
+    {
+      "id": "keyboard-shortcuts",
+      "name": "Keyboard Shortcuts",
+      "description": "Shortcut-uri globale: ? = help, Alt+H = home, Alt+T = top",
+      "author": "FME Team",
+      "file": "widgets/both/keyboard-shortcuts.js",
+      "target": "both",
+      "status": "stable",
+      "version": "1.0"
+    }
+  ],
+  "plugins": [],
+  "themes": []
+}
