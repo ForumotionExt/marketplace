@@ -1,8 +1,7 @@
 /**
-*  @user FME
-*  @version v1.0.2
-*  @global css
+*
 */
+/* Dark Neon 2026 — FME Theme */
 :root {
   --fme-primary  : {{primary_color}};
   --fme-bg       : #1a1a2e;
