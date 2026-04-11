@@ -1,6 +1,8 @@
-/* Variabilele sunt înlocuite cu valorile userului din settings */
-/* Sintaxa: {{setting_key}} */
-
+/**
+*  @user FME
+*  @version v1.0.2
+*  @global css
+*/
 :root {
   --fme-primary  : {{primary_color}};
   --fme-bg       : #1a1a2e;
