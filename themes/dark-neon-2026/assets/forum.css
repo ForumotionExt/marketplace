@@ -1,0 +1,20 @@
+/* Variabilele sunt înlocuite cu valorile userului din settings */
+/* Sintaxa: {{setting_key}} */
+
+:root {
+  --fme-primary  : {{primary_color}};
+  --fme-bg       : #1a1a2e;
+  --fme-text     : #e2e2e2;
+  --fme-radius   : {{rounded_corners == true ? '6px' : '0px'}};
+  --fme-fontsize : {{font_size}}px;
+}
+
+body {
+  background: var(--fme-bg) !important;
+  color: var(--fme-text) !important;
+  font-size: var(--fme-fontsize) !important;
+}
+
+.header, .nav {
+  background: var(--fme-primary) !important;
+}

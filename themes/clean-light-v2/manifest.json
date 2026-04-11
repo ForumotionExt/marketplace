@@ -1,0 +1,52 @@
+{
+  "id"            : "clean-light-v2",
+  "name"          : "Clean Light V2",
+  "description"   : "Temă light și curată pentru phpBB3.",
+  "version"       : "1.0.0",
+  "author"        : "staark-dev",
+  "engine"        : "phpBB3",
+  "template_base" : "prosilver",
+  "status"        : "stable",
+  "stars"         : 12,
+  "tags"          : ["light", "clean", "phpBB3"],
+
+  "fme_min_version": "1.5.0",
+
+  "settings": {
+    "primary_color": {
+      "type"       : "color",
+      "label"      : "Culoare primară",
+      "default"    : "#7c3aed",
+      "description": "Culoarea principală a temei"
+    },
+    "font_size": {
+      "type"   : "range",
+      "label"  : "Dimensiune font",
+      "default": 14,
+      "min"    : 11,
+      "max"    : 18,
+      "step"   : 1
+    },
+    "rounded_corners": {
+      "type"   : "boolean",
+      "label"  : "Colțuri rotunjite",
+      "default": true
+    }
+  },
+
+  "files": {
+    "forum_css" : "assets/forum.css",
+    "acp_css"   : "assets/acp.css",
+    "preview"   : "assets/preview.png",
+    "templates" : [
+      { "id": "116", "name": "overall_header",          "category": "main", "file": "templates/overall_header.html" },
+      { "id": "133", "name": "overall_footer_end",      "category": "main", "file": "templates/overall_footer_end.html" },
+      { "id": "115", "name": "overall_footer_begin",    "category": "main", "file": "templates/overall_footer_begin.html" },
+      { "id": "111", "name": "index_body",              "category": "main", "file": "templates/index_body.html" }
+    ],
+    "plugins": [
+        { "id": "main-plugin", "file": "plugins/main-plugin.js", "description": "Plugin pentru funcționalități suplimentare în tema Clean Light V2"},
+        { "id": "color-switcher", "file": "plugins/color-switcher.js", "description": "Plugin pentru schimbarea dinamică a culorii primare în tema Clean Light V2"}
+    ]
+  }
+}
