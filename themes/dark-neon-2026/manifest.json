@@ -10,7 +10,7 @@
   "stars"         : 12,
   "tags"          : ["dark", "neon", "phpBB3"],
 
-  "fme_min_version": "1.5.0",
+  "fme_min_version": "1.4.2",
 
   "settings": {
     "primary_color": {
