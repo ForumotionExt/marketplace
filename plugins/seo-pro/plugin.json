@@ -1,0 +1,35 @@
+{
+  "id": "seo-pro",
+  "version": "1.2.0",
+  "schema": 2,
+  "hooks": {
+    "acp": {
+      "script": "acp.js",
+      "runAt": "panel-ready"
+    },
+    "forum": {
+      "script": "forum.js",
+      "runAt": "document-idle"
+    }
+  },
+  "styles": "styles.css",
+  "settings": {
+    "enableAutoMeta": {
+      "type": "boolean",
+      "default": true,
+      "label": "Generare automată meta tags"
+    },
+    "targetScore": {
+      "type": "number",
+      "default": 80,
+      "min": 0,
+      "max": 100,
+      "label": "Scor SEO țintă"
+    }
+  },
+  "permissions": ["storage", "fetch:api.example.com"],
+  "changelog": {
+    "1.2.0": "Adăugat analiză link-uri externe",
+    "1.1.0": "Fix compatibilitate FME 1.4"
+  }
+}

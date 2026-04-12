@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "updated": "2026-04-12",
+  "plugins": [
+    {
+      "id": "seo-pro",
+      "name": "SEO Pro",
+      "version": "1.2.0",
+      "description": "Analiză SEO avansată pentru forumul tău",
+      "author": "ForumotionExt",
+      "category": "performance",
+      "tags": ["seo", "meta", "analytics"],
+      "entry": "seo-pro/plugin.json",
+      "preview": "seo-pro/preview.png",
+      "minFmeVersion": "1.4.0",
+      "hooks": ["acp", "forum"],
+      "paid": false
+    }
+  ]
+}
