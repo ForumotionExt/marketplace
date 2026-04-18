@@ -1,1 +1,58 @@
-
+[
+  {
+    "id": "dark-neon-2026",
+    "name": "Dark Neon 2026",
+    "description": "Temă dark cu accente neon, optimizată pentru phpBB3/prosilver.",
+    "author": "staark-dev",
+    "path": "themes/dark-neon-2026",
+    "status": "stable",
+    "version": "1.0.0",
+    "stars": 12,
+    "tags": ["dark", "neon", "phpBB3"],
+    "engine": "phpBB3"
+  }, {
+    "id": "clean-light-v2",
+    "name": "Clean Light v2",
+    "description": "Temă light minimalistă pentru forumuri profesionale.",
+    "author": "staark-dev",
+    "path": "themes/clean-light-v2",
+    "status": "stable",
+    "version": "1.1.0",
+    "stars": 8,
+    "tags": ["light", "minimal", "phpBB3"],
+    "engine": "phpBB3"
+  }, {
+    "id": "retro-phpbb2",
+    "name": "Retro phpBB2",
+    "description": "Temă clasică pentru subsilver, design retro cu touch modern.",
+    "author": "FME Team",
+    "path": "themes/retro-phpbb2",
+    "status": "beta",
+    "version": "0.8.0",
+    "stars": 4,
+    "tags": ["retro", "phpBB2", "subsilver"],
+    "engine": "phpBB2"
+  }, {
+    "id": "ocean-blue",
+    "name": "Ocean Blue",
+    "description": "Temă albastră inspirată de ocean, cu animații subtile și design modern.",
+    "author": "FME Team",
+    "path": "themes/ocean-blue",
+    "status": "beta",
+    "version": "0.7.0",
+    "stars": 6,
+    "tags": ["blue", "ocean", "phpBB3"],
+    "engine": "phpBB3"
+  }, {
+    "id": "minimal-white",
+    "name": "Minimal White",
+    "description": "Design ultra-minimalist, alb pur, perfect pentru forumuri de business.",
+    "author": "FME Team",
+    "path": "themes/minimal-white",
+    "status": "wip",
+    "version": "0.4.0",
+    "stars": 3,
+    "tags": ["white", "minimal", "business", "phpBB3"],
+    "engine": "phpBB3"
+  }
+]
