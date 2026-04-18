@@ -1,7 +1,76 @@
 {
   "version": "1",
-  "updatedAt": "2026-04-18T00:00:00Z",
-  "items": [{
-    
-  }]
+  "updated": "2026-04-18T00:00:00Z",
+  "items": [
+    {
+      "id": "backup-full-theme",
+      "name": "Backup Full Theme",
+      "version": "1.0.0",
+      "description": "Exportă tema completă a forumului (CSS, templates, setări) într-un singur fișier arhivă.",
+      "author": "FME Team",
+      "category": "backup",
+      "tags": ["backup", "theme", "export"],
+      "entry": "backup-full-theme/extension.json",
+      "preview": "backup-full-theme/preview.png",
+      "minFmeVersion": "1.4.0",
+      "hooks": ["acp"],
+      "paid": false
+    },
+    {
+      "id": "bulk-replace-templates",
+      "name": "Bulk Replace Templates",
+      "version": "1.0.0",
+      "description": "Înlocuiește text sau cod în mai multe template-uri simultan folosind regex sau match simplu.",
+      "author": "FME Team",
+      "category": "templates",
+      "tags": ["bulk", "replace", "templates", "regex"],
+      "entry": "bulk-replace-templates/extension.json",
+      "preview": "bulk-replace-templates/preview.png",
+      "minFmeVersion": "1.4.0",
+      "hooks": ["acp"],
+      "paid": false
+    },
+    {
+      "id": "css-variables-editor",
+      "name": "CSS Variables Editor",
+      "version": "1.0.0",
+      "description": "Editor vizual pentru variabile CSS — modifică culori, fonturi și spațieri fără să scrii cod.",
+      "author": "FME Team",
+      "category": "ui",
+      "tags": ["css", "variables", "editor", "design"],
+      "entry": "css-variables-editor/extension.json",
+      "preview": "css-variables-editor/preview.png",
+      "minFmeVersion": "1.4.0",
+      "hooks": ["acp", "forum"],
+      "paid": false
+    },
+    {
+      "id": "template-diff-viewer",
+      "name": "Template Diff Viewer",
+      "version": "1.0.0",
+      "description": "Compară două versiuni ale unui template side-by-side și evidențiază diferențele.",
+      "author": "FME Team",
+      "category": "templates",
+      "tags": ["diff", "compare", "templates", "version"],
+      "entry": "template-diff-viewer/extension.json",
+      "preview": "template-diff-viewer/preview.png",
+      "minFmeVersion": "1.4.0",
+      "hooks": ["acp"],
+      "paid": false
+    },
+    {
+      "id": "scheduled-css-injector",
+      "name": "Scheduled CSS Injector",
+      "version": "1.0.0",
+      "description": "Injectează CSS personalizat după un program — ex: temă specială de sărbători activată automat.",
+      "author": "FME Team",
+      "category": "automation",
+      "tags": ["css", "schedule", "inject", "automation"],
+      "entry": "scheduled-css-injector/extension.json",
+      "preview": "scheduled-css-injector/preview.png",
+      "minFmeVersion": "1.5.0",
+      "hooks": ["forum"],
+      "paid": false
+    }
+  ]
 }
