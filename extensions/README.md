@@ -1,4 +1,4 @@
-# Themes
+# Extensions
 
 This folder is reserved for FME Marketplace extensions. No extensions are available yet.
 
