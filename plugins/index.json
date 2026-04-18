@@ -1,11 +1,12 @@
 {
   "version": "1",
-  "updatedAt": "2026-04-18T00:00:00Z"
-  "items": [{
+  "updatedAt": "2026-04-18T00:00:00Z",
+  "items": [
+    {
       "id": "seo-pro",
       "name": "SEO Pro",
       "version": "1.2.0",
-      "description": "Analiză SEO avansată pentru forumul tău",
+      "description": "Analiză SEO avansată pentru forumul tău.",
       "author": "ForumotionExt",
       "category": "performance",
       "tags": ["seo", "meta", "analytics"],
@@ -13,6 +14,62 @@
       "preview": "seo-pro/preview.png",
       "minFmeVersion": "1.4.0",
       "hooks": ["acp", "forum"],
+      "paid": false
+    },
+    {
+      "id": "anti-spam-shield",
+      "name": "Anti-Spam Shield",
+      "version": "1.0.0",
+      "description": "Detectează și blochează automat mesajele spam folosind filtre avansate și liste negre.",
+      "author": "FME Team",
+      "category": "security",
+      "tags": ["spam", "security", "moderation"],
+      "entry": "anti-spam-shield/plugin.json",
+      "preview": "anti-spam-shield/preview.png",
+      "minFmeVersion": "1.4.0",
+      "hooks": ["acp", "forum"],
+      "paid": false
+    },
+    {
+      "id": "user-activity-tracker",
+      "name": "User Activity Tracker",
+      "version": "1.1.0",
+      "description": "Monitorizează activitatea utilizatorilor — postări, logări, timp petrecut pe forum.",
+      "author": "FME Team",
+      "category": "analytics",
+      "tags": ["analytics", "users", "activity", "stats"],
+      "entry": "user-activity-tracker/plugin.json",
+      "preview": "user-activity-tracker/preview.png",
+      "minFmeVersion": "1.4.0",
+      "hooks": ["acp"],
+      "paid": false
+    },
+    {
+      "id": "auto-moderator",
+      "name": "Auto Moderator",
+      "version": "1.0.0",
+      "description": "Aplică reguli automate de moderare — filtrare cuvinte, restricții per rang, cooldown între postări.",
+      "author": "FME Team",
+      "category": "moderation",
+      "tags": ["moderation", "auto", "rules", "filter"],
+      "entry": "auto-moderator/plugin.json",
+      "preview": "auto-moderator/preview.png",
+      "minFmeVersion": "1.5.0",
+      "hooks": ["acp", "forum"],
+      "paid": false
+    },
+    {
+      "id": "forum-statistics-dashboard",
+      "name": "Forum Statistics Dashboard",
+      "version": "1.0.0",
+      "description": "Dashboard vizual cu statistici detaliate — topicuri, postări, utilizatori noi, activitate zilnică.",
+      "author": "FME Team",
+      "category": "analytics",
+      "tags": ["stats", "dashboard", "analytics", "charts"],
+      "entry": "forum-statistics-dashboard/plugin.json",
+      "preview": "forum-statistics-dashboard/preview.png",
+      "minFmeVersion": "1.4.0",
+      "hooks": ["acp"],
       "paid": false
     }
   ]
