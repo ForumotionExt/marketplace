@@ -7,7 +7,7 @@
   "category": "analytics",
   "tags": ["seo", "meta"],
   "entry": "index.js",
-  "style": "style.css",
+  "style": "styles.css",
   "preview": "preview.png",
   "minFmeVersion": "1.4.0",
   "hooks": ["forum", "acp"],
