@@ -1,5 +1,7 @@
-[
-  {
+{
+  "updatedAt": "2026-04-18T00:00:00Z",
+  "version": "2",
+  "items": [{
     "id": "dark-neon-2026",
     "name": "Dark Neon 2026",
     "description": "Temă dark cu accente neon, optimizată pentru phpBB3/prosilver.",
@@ -54,5 +56,5 @@
     "stars": 3,
     "tags": ["white", "minimal", "business", "phpBB3"],
     "engine": "phpBB3"
-  }
-]
+  }]
+}
