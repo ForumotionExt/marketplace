@@ -1,8 +1,7 @@
 {
-  "version": "1.0",
-  "updated": "2026-04-12",
-  "plugins": [
-    {
+  "version": "1",
+  "updatedAt": "2026-04-18T00:00:00Z"
+  "items": [{
       "id": "seo-pro",
       "name": "SEO Pro",
       "version": "1.2.0",
