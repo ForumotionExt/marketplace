@@ -1,0 +1,46 @@
+{
+  "id": "bulk-search-replace",
+  "name": "Search & Replace",
+  "version": "1.0.0",
+  "description": "Caută și înlocuiește text în bulk în template-urile forumului.",
+  "author": "FME Team",
+  "category": "moderation",
+  "tags": ["search", "template", "replace"],
+  "entry": "index.js",
+  "style": "style.css",
+  "preview": "preview.png",
+  "minFmeVersion": "1.4.0",
+  "hooks": ["acp"],
+  "paid": false,
+  "settings": {
+    "searchScope": {
+      "type": "select",
+      "label": "Scope căutare",
+      "default": "all",
+      "options": [
+        { "value": "all",       "label": "Tot forumul" },
+        { "value": "templates", "label": "Doar template-uri" },
+        { "value": "css",       "label": "Doar CSS" }
+      ]
+    },
+    "caseSensitive": {
+      "type": "checkbox",
+      "label": "Case sensitive",
+      "default": false
+    },
+    "maxResults": {
+      "type": "number",
+      "label": "Rezultate maxime",
+      "default": 100,
+      "min": 1,
+      "max": 500
+    },
+    "apiKey": {
+      "type": "text",
+      "label": "API Key",
+      "default": "",
+      "secret": true
+    }
+  },
+  "changelog": {}
+}
