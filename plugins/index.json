@@ -34,7 +34,7 @@
       "id": "backup-restore",
       "name": "Backup & Restore",
       "version": "1.0.0",
-      "description": "Export complet (template-uri + CSS + JS Modules) într-un fișier JSON sau ZIP. Restaurare selectivă pe categorii. Forumotion nu oferă asta nativ.",
+      "description": "Plugin-ul Backup & Restore permite administratorilor să exporte și să restaureze complet conținutul forumului — template-uri, CSS și JS Modules — direct din panoul de administrare Forumotion.<br />Forumotion nu oferă această funcționalitate nativ. Plugin-ul accesează ACP-ul cu sesiunea autentificată și construiește un backup structurat, exportabil în format JSON sau ZIP.",
       "author": "FME Team",
       "category": "performance",
       "tags": ["performance", "backup", "activity", "restore"],
