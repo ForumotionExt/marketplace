@@ -1,6 +1,6 @@
-# 🔍 Search & Replace
+# 🗄️ Backup & Restore
 
-> Caută și înlocuiește text în bulk în template-urile forumului tău Forumotion.
+> Export complet (template-uri + CSS + JS Modules) într-un fișier JSON sau ZIP. Restaurare selectivă pe categorii. Forumotion nu oferă asta nativ.
 
 ---
 
@@ -8,10 +8,10 @@
 
 | Câmp | Valoare |
 |---|---|
-| **ID** | `bulk-search-replace` |
+| **ID** | `backup-restore` |
 | **Versiune** | `1.0.0` |
 | **Autor** | FME Team |
-| **Categorie** | Moderation |
+| **Categorie** | Performance |
 | **Hook** | `acp` |
 | **FME minim** | `1.4.0` |
 | **Plătit** | Nu |
@@ -20,19 +20,20 @@
 
 ## 📋 Descriere
 
-Plugin-ul **Search & Replace** permite administratorilor să caute și să înlocuiască text în bulk în template-urile și CSS-ul forumului, direct din panoul de administrare Forumotion.
+Plugin-ul **Backup & Restore** permite administratorilor să exporte și să restaureze complet conținutul forumului — template-uri, CSS și JS Modules — direct din panoul de administrare Forumotion.
 
-Accesibil din meniul **Teme**, înainte de secțiunea Template-uri.
+Forumotion nu oferă această funcționalitate nativ. Plugin-ul accesează ACP-ul cu sesiunea autentificată și construiește un backup structurat, exportabil în format **JSON** sau **ZIP**.
 
 ---
 
 ## 🚀 Funcționalități
 
-- 🔎 **Căutare în bulk** — caută text în toate template-urile sau doar în CSS
-- ✏️ **Înlocuire în bulk** — înlocuiește automat textul găsit în toate locațiile
-- 👁️ **Preview** — vizualizează rezultatele înainte de a executa înlocuirea
-- 🔡 **Case sensitive** — opțiune pentru căutare sensibilă la majuscule
-- 💾 **Setări salvate** — preferințele sunt reținute între sesiuni
+- 📥 **Export JSON** — fișier unic structurat cu tot conținutul selectat
+- 📦 **Export ZIP** — fișiere separate pe categorii (templates/css/js)
+- ♻️ **Restore selectiv** — alegi exact ce categorii să fie restaurate
+- 🗂️ **Categorii template-uri** — selectezi individual din cele 9 categorii FM
+- 💾 **Include JS Modules** — exportă și codul JS custom din ACP
+- ⚠️ **Confirmare înainte de restore** — protecție împotriva suprascrierii accidentale
 
 ---
 
@@ -40,21 +41,61 @@ Accesibil din meniul **Teme**, înainte de secțiunea Template-uri.
 
 | Setare | Tip | Default | Descriere |
 |---|---|---|---|
-| `searchScope` | `select` | `all` | Scopul căutării: tot forumul, doar template-uri sau doar CSS |
-| `caseSensitive` | `checkbox` | `false` | Căutare sensibilă la majuscule |
-| `maxResults` | `number` | `100` | Numărul maxim de rezultate returnate (1–500) |
-| `apiKey` | `text` | `""` | Cheie API opțională (secret) |
+| `includeTemplates` | `checkbox` | `true` | Include template-urile în export |
+| `includeCss` | `checkbox` | `true` | Include CSS-ul temei |
+| `includeJs` | `checkbox` | `true` | Include JS Modules |
+| `exportFormat` | `select` | `json` | Formatul exportului: `json` sau `zip` |
 
 ---
 
 ## 📁 Structură
 
 ```
-bulk-search-replace/
+backup-restore/
 ├── plugin.json   — manifest
 ├── index.js      — codul principal
 ├── style.css     — stiluri
 └── preview.png   — previzualizare marketplace
+```
+
+---
+
+## 📂 Structura fișierului de backup
+
+### JSON
+```json
+{
+  "meta": {
+    "version": "1.0.0",
+    "date": "2026-04-19T12:00:00.000Z",
+    "origin": "https://forum.forumotion.com",
+    "tid": "abc123",
+    "engine": "prosilver"
+  },
+  "templates": {
+    "main": [
+      { "id": "1", "name": "overall_header", "content": "..." }
+    ]
+  },
+  "css": "body { ... }",
+  "jsModules": [
+    { "id": "42", "title": "[FME Plugin] SEO Tools", "content": "..." }
+  ]
+}
+```
+
+### ZIP
+```
+fme-backup-1234567890.zip
+├── meta.json
+├── css/
+│   └── theme.css
+├── js/
+│   └── 42-FME_Plugin_SEO_Tools.js
+└── templates/
+    ├── main/
+    │   └── 1-overall_header.html
+    └── portal/
 ```
 
 ---
@@ -66,39 +107,58 @@ Necesită **FME Bridge** (`window.__FME__`) cu cel puțin:
 - `FME.session` — `isACP()`, `isFMEPage()`, `getSection()`
 - `FME.utils.url` — `origin()`, `tid()`, `param()`
 - `FME.dom` — `urls`, `icons`, `selectors`
-- `FME.settings` — `get()`, `save()`
+- `FME.templates` — `categories`
+- `FME.engine` — `detect()`
 - `FME.bus` — `emit()`
 - `FME.ui` — `toast()`
+- `FME.libs` — `loadJSZip()` *(pentru export ZIP)*
 
 ---
 
 ## 🛠️ Instalare
 
 1. Deschide **FME → Plugins → Marketplace**
-2. Caută `Search & Replace`
+2. Caută `Backup & Restore`
 3. Apasă **Instalează**
-4. Navighează la **Teme** — vei vedea linkul **Search & Replace** adăugat în meniu
+4. Navighează la **Teme** — vei vedea linkul **Backup & Restore** adăugat în meniu
 
 ---
 
 ## 📖 Utilizare
 
-1. Mergi la **Teme → Search & Replace**
-2. Selectează **Scope** — unde vrei să cauți
-3. Introdu textul de **căutat**
-4. Introdu textul de **înlocuit**
-5. Apasă **Preview** pentru a vedea ce va fi modificat
-6. Apasă **Execută** pentru a aplica înlocuirea
+### Export
+1. Mergi la **Teme → Backup & Restore**
+2. Selectează **formatul** — JSON sau ZIP
+3. Bifează ce vrei să incluzi — template-uri, CSS, JS
+4. Selectează **categoriile de template-uri**
+5. Apasă **Exportă** — fișierul se descarcă automat
+
+### Restore
+1. Apasă **Alege fișier** și selectează un backup `.json` sau `.zip`
+2. Plugin-ul analizează fișierul și afișează categoriile disponibile
+3. Bifează ce vrei să restaurezi
+4. Apasă **Restaurează** și confirmă
+5. ⚠️ Datele existente vor fi **suprascrise**
+
+---
+
+## ⚠️ Riscuri
+
+- Restaurarea este **ireversibilă** — fă întotdeauna un export înainte de restore
+- Un backup incomplet (export întrerupt) poate produce un restore parțial
+- JS Modules suprascrise pot afecta funcționalitatea forumului
+- Backup-urile sunt legate de `tid` — pot fi incompatibile între forumuri diferite
 
 ---
 
 ## 📝 Changelog
 
-### 1.0.0
+### 1.0.0 — 2026-04-19
 - Lansare inițială
-- Căutare și înlocuire în template-uri și CSS
-- Suport pentru preview înainte de execuție
-- Setări salvate per sesiune
+- Export JSON și ZIP
+- Fetch template-uri, CSS și JS Modules din ACP
+- Restaurare selectivă pe categorii
+- Integrare vizuală nativă cu ACP Forumotion
 
 ---
 
