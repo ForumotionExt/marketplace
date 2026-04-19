@@ -69,17 +69,13 @@
       </blockquote>
 
       <div class="${FME.dom.content.GROUP}">
-
-        <blockquote class="block_left">
-          <p class="${FME.dom.content.HELP_TEXT}">
-            Caută și înlocuiește text în bulk în template-urile și CSS-ul forumului.
-            <strong>⚠️ Operațiunea este ireversibilă.</strong> Folosește Preview înainte de execuție.
-          </p>
-        </blockquote>
+        <p>
+          Caută și înlocuiește text în bulk în template-urile și CSS-ul forumului.
+          <strong>⚠️ Operațiunea este ireversibilă.</strong> Folosește Preview înainte de execuție.
+        </p>
 
         <table class="${FME.dom.content.TABLE}">
           <tbody>
-
             <tr class="${FME.dom.content.ROW_ODD}">
               <td class="first-col"><label for="fme-bsr-scope">Scope</label></td>
               <td>
@@ -88,7 +84,7 @@
                   <option value="templates">Doar template-uri</option>
                   <option value="css">Doar CSS</option>
                 </select>
-                <p class="${FME.dom.content.HELP_TEXT}">Zona în care se va efectua căutarea.</p>
+                <p>Zona în care se va efectua căutarea.</p>
               </td>
             </tr>
 
@@ -96,7 +92,7 @@
               <td class="first-col"><label for="fme-bsr-search">Caută</label></td>
               <td>
                 <input type="text" id="fme-bsr-search" placeholder="Text de căutat..." />
-                <p class="${FME.dom.content.HELP_TEXT}">Textul exact pe care vrei să îl găsești.</p>
+                <p>Textul exact pe care vrei să îl găsești.</p>
               </td>
             </tr>
 
@@ -104,7 +100,7 @@
               <td class="first-col"><label for="fme-bsr-replace">Înlocuiește cu</label></td>
               <td>
                 <input type="text" id="fme-bsr-replace" placeholder="Lasă gol pentru a șterge..." />
-                <p class="${FME.dom.content.HELP_TEXT}">Textul cu care va fi înlocuit. Gol = ștergere.</p>
+                <p>Textul cu care va fi înlocuit. Gol = ștergere.</p>
               </td>
             </tr>
 
@@ -112,24 +108,20 @@
               <td class="first-col"><label for="fme-bsr-case">Case sensitive</label></td>
               <td>
                 <input type="checkbox" id="fme-bsr-case" />
-                <p class="${FME.dom.content.HELP_TEXT}">Dacă e activ, "Text" și "text" sunt tratate diferit.</p>
+                <p>Dacă e activ, "Text" și "text" sunt tratate diferit.</p>
               </td>
             </tr>
 
           </tbody>
         </table>
 
-        <div class="nav">
-          <div class="nav-left">
-            <button id="fme-bsr-preview" class="button2">
-              <i class="fa ${FME.dom.icons.INFO}"></i> Preview
-            </button>
-          </div>
-          <div class="nav-right">
-            <button id="fme-bsr-run" class="button1">
-              <i class="fa ${FME.dom.icons.CHECK}"></i> Execută
-            </button>
-          </div>
+        <div class="nav div_btns">
+          <button id="fme-bsr-preview" class="button2">
+            <i class="fa fa-eye"></i> Preview
+          </button>
+          <button id="fme-bsr-run" class="button1">
+            <i class="fa ${FME.dom.icons.CHECK}"></i> Execută
+          </button>
         </div>
 
       </div>
