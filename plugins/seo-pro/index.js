@@ -7,13 +7,13 @@
   const SEOPanel = {
     nav: () => {
       const navItem = document.createElement('li');
-      navItem.innerHTML = `<a href="${origin}/admin/?part=fme&sub=seo&extended_admin=1&tid=${tid}"><span>SEO Tools</span></a>`;
+      navItem.innerHTML = `<a href="${origin}/admin/?part=fme&sub=plugins&mode=seo&extended_admin=1&tid=${tid}"><span>SEO Tools</span></a>`;
       return navItem;
     },
 
     init: (container) => {
       // Afișăm panoul doar pe pagina corectă
-      if (!window.location.href.includes('part=fme&sub=seo')) return;
+      if (!window.location.href.includes('part=fme&sub=plugins&mode=')) return;
 
       if (container.querySelector('.fme-seo-panel')) return;
 
