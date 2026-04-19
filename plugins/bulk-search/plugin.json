@@ -11,7 +11,7 @@
   "preview": "preview.png",
   "minFmeVersion": "1.4.0",
   "hooks": ["acp"],
-  "paid": false,
+  "paid": true,
   "settings": {
     "searchScope": {
       "type": "select",
@@ -42,5 +42,24 @@
       "secret": true
     }
   },
-  "changelog": {}
+  "changelog": {
+    "1.0.0": {
+      "date": "2026-04-19",
+      "changes": [
+        "Lansare inițială",
+        "Căutare și înlocuire în bulk în template-uri și CSS",
+        "Preview rezultate înainte de execuție",
+        "Suport case sensitive",
+        "Setări salvate între sesiuni",
+        "Integrare nativă cu ACP Forumotion"
+      ]
+    },
+    "1.0.2": {
+      "date": "2026-04-19",
+      "changes": [
+        "Setări salvate între sesiuni",
+        "Schimbarea afisari in pagina, pastreaza structura Forumotion"
+      ]
+    }
+  }
 }
