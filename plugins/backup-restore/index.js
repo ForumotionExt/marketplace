@@ -323,7 +323,7 @@
     }
 
     if (opts.format === 'zip') {
-        await FME.libs.loadJSZip();
+      await FME.libs.loadJSZip();
     }
 
     if (opts.css) {
@@ -353,14 +353,13 @@
   }
 
   async function downloadZip(backup) {
-    // Folosim JSZip — trebuie inclus în plugin sau încărcat din CDN
-    const JSZip  = window.JSZip();
+    const JSZip = await FME.libs.loadJSZip();
+    const zip   = new JSZip();
+    
     if (!JSZip) {
       setStatus('fme-br-export-status', '❌ JSZip nu este disponibil.');
       return;
     }
-
-    const zip = new JSZip();
 
     zip.file('meta.json', JSON.stringify(backup.meta, null, 2));
 
