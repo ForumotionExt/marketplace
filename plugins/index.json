@@ -17,18 +17,18 @@
       "paid": false
     },
     {
-      "id": "anti-spam-shield",
-      "name": "Anti-Spam Shield",
+      "id": "bulk-search",
+      "name": "Search & Replace",
       "version": "1.0.0",
-      "description": "Detectează și blochează automat mesajele spam folosind filtre avansate și liste negre.",
+      "description": "Caută și înlocuiește text în bulk în template-urile forumului.",
       "author": "FME Team",
-      "category": "security",
-      "tags": ["spam", "security", "moderation"],
-      "entry": "anti-spam-shield/plugin.json",
-      "preview": "anti-spam-shield/preview.png",
+      "category": "moderation",
+      "tags": ["search", "template", "replace"],
+      "entry": "bulk-search/plugin.json",
+      "preview": "bulk-search/preview.png",
       "minFmeVersion": "1.4.0",
-      "hooks": ["acp", "forum"],
-      "paid": false
+      "hooks": ["acp"],
+      "paid": true
     },
     {
       "id": "user-activity-tracker",
