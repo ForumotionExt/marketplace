@@ -32,7 +32,6 @@
     navItem.className = 'fme-bsr-nav submenu'
     navItem.innerHTML = `
       <a href="${navUrl}">
-        <i class="fa ${FME.dom.icons.EDIT}"></i>
         <span>Search & Replace</span>
       </a>
     `;
