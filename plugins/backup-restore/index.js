@@ -21,7 +21,7 @@
     const isThemes = params.get('part') === 'themes';
     if (!isThemes) return;
 
-    const targetLink = document.querySelector('a[href*="part=themes&sub=templates"]');
+    const targetLink = document.querySelector('a[href*="?mode=themes_temp&part=themes&sub=styles"]');
     if (!targetLink) return;
 
     const targetItem = targetLink.closest('div');
@@ -32,7 +32,6 @@
     navItem.className = 'fme-br-nav submenu';
     navItem.innerHTML = `
       <a href="${navUrl}">
-        <i class="fa ${FME.dom.icons.BACKUP}"></i>
         <span>Backup &amp; Restore</span>
       </a>
     `;
@@ -51,95 +50,102 @@
     const panel = document.createElement('div');
     panel.className = 'fme-br-panel';
     panel.innerHTML = `
-
-      <h2 class="${FME.dom.selectors.CONTENT.BREADCRUMB}">
-        <i class="fa ${FME.dom.icons.BACKUP}"></i> Backup &amp; Restore
-      </h2>
+      <h2 class="home">FME Plugins</h2>
+      <ul class="h2-breadcrumb"><li class="first">Backup & Restore</li></ul>
+      <blockquote class="block_left">
+        <p class="explain">
+          Exportă și restaurează complet conținutul forumului tău — template-uri, CSS și JS Modules —
+          într-un singur fișier <strong>JSON</strong> sau arhivă <strong>ZIP</strong>.
+          Forumotion nu oferă această funcționalitate nativ.
+          <br><br>
+          <strong>Export:</strong> Selectează categoriile dorite și descarcă un backup complet.
+          Fișierul JSON conține tot conținutul structurat, iar ZIP-ul organizează fișierele pe categorii.
+          <br><br>
+          <strong>Restore:</strong> Încarcă un backup anterior și selectează exact ce categorii
+          să fie restaurate. Poți restaura doar CSS-ul, doar anumite template-uri, sau totul dintr-o dată.
+          <br><br>
+          <strong>⚠️ Atenție:</strong> Restaurarea este <strong>ireversibilă</strong> —
+          datele existente vor fi suprascrise fără posibilitate de recuperare.
+          Recomandăm efectuarea unui export înainte de orice restore.
+        </p>
+      </blockquote>
 
       <!-- ─── EXPORT ─────────────────────────────────────────────────── -->
       <div class="${FME.dom.selectors.CONTENT.GROUP}">
+        <fieldset>
+          <legend>EXPORT</legend>
+          <h3 class="${FME.dom.selectors.CONTENT.BREADCRUMB}">
+            <i class="fa ${FME.dom.icons.DOWNLOAD}"></i> Export
+          </h3>
+          <table class="${FME.dom.selectors.CONTENT.TABLE}">
+            <tbody>
 
-        <h3 class="${FME.dom.selectors.CONTENT.BREADCRUMB}">
-          <i class="fa ${FME.dom.icons.DOWNLOAD}"></i> Export
-        </h3>
-
-        <blockquote class="block_left">
-          <p class="${FME.dom.selectors.CONTENT.HELP_TEXT}">
-            Exportă template-urile, CSS-ul și JS Modules într-un fișier JSON sau ZIP.
-            Forumotion nu oferă această funcționalitate nativ.
-          </p>
-        </blockquote>
-
-        <table class="${FME.dom.selectors.CONTENT.TABLE}">
-          <tbody>
-
-            <tr class="${FME.dom.selectors.CONTENT.ROW_ODD}">
-              <td class="first-col">Format</td>
-              <td>
-                <label>
-                  <input type="radio" name="fme-br-format" value="json" checked />
-                  JSON — fișier unic structurat
-                </label>
-                <br>
-                <label>
-                  <input type="radio" name="fme-br-format" value="zip" />
-                  ZIP — fișiere separate pe categorii
-                </label>
-              </td>
-            </tr>
-
-            <tr class="${FME.dom.selectors.CONTENT.ROW_EVEN}">
-              <td class="first-col">Conținut</td>
-              <td>
-                <label><input type="checkbox" id="fme-br-inc-templates" checked /> Template-uri</label>
-                <br>
-                <label><input type="checkbox" id="fme-br-inc-css" checked /> CSS</label>
-                <br>
-                <label><input type="checkbox" id="fme-br-inc-js" checked /> JS Modules</label>
-              </td>
-            </tr>
-
-            <tr class="${FME.dom.selectors.CONTENT.ROW_ODD}" id="fme-br-template-cats-row">
-              <td class="first-col">Categorii template-uri</td>
-              <td id="fme-br-template-cats">
-                ${FME.templates.categories.map(c => `
+              <tr class="${FME.dom.selectors.CONTENT.ROW_ODD}">
+                <td class="first-col">Format</td>
+                <td>
                   <label>
-                    <input type="checkbox" class="fme-br-cat" value="${c.key}" checked />
-                    ${c.label}
-                  </label><br>
-                `).join('')}
-              </td>
-            </tr>
+                    <input type="radio" name="fme-br-format" value="json" checked />
+                    JSON — fișier unic structurat
+                  </label>
+                  <br>
+                  <label>
+                    <input type="radio" name="fme-br-format" value="zip" />
+                    ZIP — fișiere separate pe categorii
+                  </label>
+                </td>
+              </tr>
 
-          </tbody>
-        </table>
+              <tr class="${FME.dom.selectors.CONTENT.ROW_EVEN}">
+                <td class="first-col">Conținut</td>
+                <td>
+                  <label><input type="checkbox" id="fme-br-inc-templates" checked /> Template-uri</label>
+                  <br>
+                  <label><input type="checkbox" id="fme-br-inc-css" checked /> CSS</label>
+                  <br>
+                  <label><input type="checkbox" id="fme-br-inc-js" checked /> JS Modules</label>
+                </td>
+              </tr>
 
-        <div class="nav">
-          <div class="nav-left">
-            <span id="fme-br-export-status" class="${FME.dom.selectors.CONTENT.HELP_TEXT}"></span>
+              <tr class="${FME.dom.selectors.CONTENT.ROW_ODD}" id="fme-br-template-cats-row">
+                <td class="first-col">Categorii template-uri</td>
+                <td id="fme-br-template-cats">
+                  ${FME.templates.categories.map(c => `
+                    <label>
+                      <input type="checkbox" class="fme-br-cat" value="${c.key}" checked />
+                      ${c.label}
+                    </label><br>
+                  `).join('')}
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <div class="nav div_btns">
+            <div class="nav-left">
+              <span id="fme-br-export-status" class="${FME.dom.selectors.CONTENT.HELP_TEXT}"></span>
+            </div>
+            <div class="nav-right">
+              <button id="fme-br-export" class="button1">
+                <i class="fa ${FME.dom.icons.DOWNLOAD}"></i> Exportă
+              </button>
+            </div>
           </div>
-          <div class="nav-right">
-            <button id="fme-br-export" class="button1">
-              <i class="fa ${FME.dom.icons.DOWNLOAD}"></i> Exportă
-            </button>
-          </div>
-        </div>
-
+        </fieldset>
       </div>
 
       <!-- ─── IMPORT ─────────────────────────────────────────────────── -->
       <div class="${FME.dom.selectors.CONTENT.GROUP}">
+      <fieldset>
+        <legend>IMPORT</legend>
 
         <h3 class="${FME.dom.selectors.CONTENT.BREADCRUMB}">
           <i class="fa ${FME.dom.icons.UPLOAD}"></i> Restore
         </h3>
-
-        <blockquote class="block_left">
-          <p class="${FME.dom.selectors.CONTENT.HELP_TEXT}">
-            Restaurează un backup anterior. Poți selecta ce categorii să fie restaurate.
-            <strong>⚠️ Datele existente vor fi suprascrise.</strong>
-          </p>
-        </blockquote>
+        <p>
+          Restaurează un backup anterior. Poți selecta ce categorii să fie restaurate.
+          <strong>⚠️ Datele existente vor fi suprascrise.</strong>
+        </p>
 
         <table class="${FME.dom.selectors.CONTENT.TABLE}">
           <tbody>
@@ -164,7 +170,7 @@
           </tbody>
         </table>
 
-        <div class="nav">
+        <div class="nav div_btns">
           <div class="nav-left">
             <span id="fme-br-import-status" class="${FME.dom.selectors.CONTENT.HELP_TEXT}"></span>
           </div>
@@ -174,9 +180,8 @@
             </button>
           </div>
         </div>
-
+      </fieldset>
       </div>
-
     `;
 
     main.appendChild(panel);
@@ -349,7 +354,7 @@
 
   async function downloadZip(backup) {
     // Folosim JSZip — trebuie inclus în plugin sau încărcat din CDN
-    const JSZip  = new window.JSZip();
+    const JSZip  = window.JSZip();
     if (!JSZip) {
       setStatus('fme-br-export-status', '❌ JSZip nu este disponibil.');
       return;
