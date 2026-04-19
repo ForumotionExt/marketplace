@@ -122,24 +122,27 @@
             <i class="fa ${FME.dom.icons.CHECK}"></i> Execută
           </button>
         </div>
-
       </div>
-
+      
       <div id="fme-bsr-results" style="display:none;">
-        <div class="${FME.dom.content.GROUP}">
-          <h3 class="${FME.dom.content.BREADCRUMB}">
-            <i class="fa ${FME.dom.icons.INFO}"></i> Rezultate
-          </h3>
-          <table class="${FME.dom.content.TABLE}">
-            <thead>
-              <tr>
-                <th>Template</th>
-                <th>Previzualizare</th>
-              </tr>
-            </thead>
-            <tbody id="fme-bsr-results-list"></tbody>
-          </table>
-        </div>
+        <fieldset>
+          <legend>Previzualizare</legend>
+          <div class="${FME.dom.content.GROUP}">
+            <h3 class="${FME.dom.content.BREADCRUMB}">
+              <i class="fa ${FME.dom.icons.INFO}"></i> Rezultate
+            </h3>
+
+            <table class="${FME.dom.content.TABLE}">
+              <thead>
+                <tr>
+                  <th>Template</th>
+                  <th>Previzualizare</th>
+                </tr>
+              </thead>
+              <tbody id="fme-bsr-results-list"></tbody>
+            </table>
+          </div>
+        </fieldset>
       </div>
       </div>
     `;

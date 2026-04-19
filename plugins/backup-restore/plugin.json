@@ -1,0 +1,52 @@
+{
+  "id": "backup-restore",
+  "name": "Backup & Restore",
+  "version": "1.0.0",
+  "description": "Export complet (template-uri + CSS + JS) într-un fișier JSON sau ZIP. Restaurare selectivă pe categorii. Forumotion nu oferă asta nativ.",
+  "author": "FME Team",
+  "category": "performance",
+  "tags": ["backup", "restore", "templates", "css", "export", "import"],
+  "entry": "index.js",
+  "style": "style.css",
+  "preview": "preview.png",
+  "minFmeVersion": "1.4.0",
+  "hooks": ["acp"],
+  "paid": false,
+  "settings": {
+    "includeTemplates": {
+      "type": "checkbox",
+      "label": "Include template-uri",
+      "default": true
+    },
+    "includeCss": {
+      "type": "checkbox",
+      "label": "Include CSS",
+      "default": true
+    },
+    "includeJs": {
+      "type": "checkbox",
+      "label": "Include JS Modules",
+      "default": true
+    },
+    "exportFormat": {
+      "type": "select",
+      "label": "Format export",
+      "default": "json",
+      "options": [
+        { "value": "json", "label": "JSON" },
+        { "value": "zip",  "label": "ZIP"  }
+      ]
+    }
+  },
+  "changelog": {
+    "1.0.0": {
+      "date": "2026-04-19",
+      "changes": [
+        "Lansare inițială",
+        "Export JSON și ZIP",
+        "Restaurare selectivă pe categorii",
+        "Include template-uri, CSS și JS Modules"
+      ]
+    }
+  }
+}
