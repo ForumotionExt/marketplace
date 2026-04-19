@@ -51,56 +51,105 @@
     const panel = document.createElement('div');
     panel.className = 'fme-bsr-panel';
     panel.innerHTML = `
-      <h2 class="${FME.dom.selectors.CONTENT.BREADCRUMB}">
-        <i class="fa ${FME.dom.icons.EDIT}"></i> Search &amp; Replace
-      </h2>
+      <h2 class="home">FME Plugins</h2>
+      <ul class="h2-breadcrumb"><li class="first">Search & Replace</li></ul>
+      <blockquote class="block_left">
+        <p class="explain">
+          Acest plugin permite căutarea și înlocuirea în bulk a textului din template-urile și CSS-ul forumului tău.
+          Funcționează direct din panoul de administrare Forumotion, fără a fi nevoie să editezi fiecare template manual.
+          <br><br>
+          <strong>Cum funcționează:</strong> Plugin-ul parcurge toate template-urile din categoria selectată,
+          caută textul specificat și îl înlocuiește automat. Poți previzualiza rezultatele înainte de a aplica modificările.
+          <br><br>
+          <strong>⚠️ Riscuri:</strong> Operațiunea este <strong>ireversibilă</strong> — nu există undo după execuție.
+          O căutare prea generică (ex: <code>a</code>, <code>div</code>) poate modifica sute de template-uri simultan.
+          Se recomandă un <strong>backup</strong> înainte de utilizare și folosirea opțiunii <strong>Preview</strong>
+          pentru a verifica rezultatele înainte de a executa înlocuirea.
+        </p>
+      </blockquote>
 
-      <div class="${FME.dom.selectors.CONTENT.GROUP}">
+      <div class="${FME.dom.content.GROUP}">
 
-        <div class="fme-bsr-form">
+        <blockquote class="block_left">
+          <p class="${FME.dom.content.HELP_TEXT}">
+            Caută și înlocuiește text în bulk în template-urile și CSS-ul forumului.
+            <strong>⚠️ Operațiunea este ireversibilă.</strong> Folosește Preview înainte de execuție.
+          </p>
+        </blockquote>
 
-          <div class="fme-bsr-row">
-            <label>Scope</label>
-            <select id="fme-bsr-scope">
-              <option value="all">Tot forumul</option>
-              <option value="templates">Doar template-uri</option>
-              <option value="css">Doar CSS</option>
-            </select>
-          </div>
+        <table class="${FME.dom.content.TABLE}">
+          <tbody>
 
-          <div class="fme-bsr-row">
-            <label>Caută</label>
-            <input type="text" id="fme-bsr-search" placeholder="Text de căutat..." />
-          </div>
+            <tr class="${FME.dom.content.ROW_ODD}">
+              <td class="first-col"><label for="fme-bsr-scope">Scope</label></td>
+              <td>
+                <select id="fme-bsr-scope">
+                  <option value="all">Tot forumul</option>
+                  <option value="templates">Doar template-uri</option>
+                  <option value="css">Doar CSS</option>
+                </select>
+                <p class="${FME.dom.content.HELP_TEXT}">Zona în care se va efectua căutarea.</p>
+              </td>
+            </tr>
 
-          <div class="fme-bsr-row">
-            <label>Înlocuiește cu</label>
-            <input type="text" id="fme-bsr-replace" placeholder="Text de înlocuit..." />
-          </div>
+            <tr class="${FME.dom.content.ROW_EVEN}">
+              <td class="first-col"><label for="fme-bsr-search">Caută</label></td>
+              <td>
+                <input type="text" id="fme-bsr-search" placeholder="Text de căutat..." />
+                <p class="${FME.dom.content.HELP_TEXT}">Textul exact pe care vrei să îl găsești.</p>
+              </td>
+            </tr>
 
-          <div class="fme-bsr-row">
-            <label>
-              <input type="checkbox" id="fme-bsr-case" />
-              Case sensitive
-            </label>
-          </div>
+            <tr class="${FME.dom.content.ROW_ODD}">
+              <td class="first-col"><label for="fme-bsr-replace">Înlocuiește cu</label></td>
+              <td>
+                <input type="text" id="fme-bsr-replace" placeholder="Lasă gol pentru a șterge..." />
+                <p class="${FME.dom.content.HELP_TEXT}">Textul cu care va fi înlocuit. Gol = ștergere.</p>
+              </td>
+            </tr>
 
-          <div class="fme-bsr-actions">
-            <button id="fme-bsr-preview" class="fme-btn">
+            <tr class="${FME.dom.content.ROW_EVEN}">
+              <td class="first-col"><label for="fme-bsr-case">Case sensitive</label></td>
+              <td>
+                <input type="checkbox" id="fme-bsr-case" />
+                <p class="${FME.dom.content.HELP_TEXT}">Dacă e activ, "Text" și "text" sunt tratate diferit.</p>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <div class="nav">
+          <div class="nav-left">
+            <button id="fme-bsr-preview" class="button2">
               <i class="fa ${FME.dom.icons.INFO}"></i> Preview
             </button>
-            <button id="fme-bsr-run" class="fme-btn fme-btn-primary">
+          </div>
+          <div class="nav-right">
+            <button id="fme-bsr-run" class="button1">
               <i class="fa ${FME.dom.icons.CHECK}"></i> Execută
             </button>
           </div>
-
         </div>
 
-        <div id="fme-bsr-results" class="fme-bsr-results" style="display:none;">
-          <h3>Rezultate</h3>
-          <div id="fme-bsr-results-list"></div>
-        </div>
+      </div>
 
+      <div id="fme-bsr-results" style="display:none;">
+        <div class="${FME.dom.content.GROUP}">
+          <h3 class="${FME.dom.content.BREADCRUMB}">
+            <i class="fa ${FME.dom.icons.INFO}"></i> Rezultate
+          </h3>
+          <table class="${FME.dom.content.TABLE}">
+            <thead>
+              <tr>
+                <th>Template</th>
+                <th>Previzualizare</th>
+              </tr>
+            </thead>
+            <tbody id="fme-bsr-results-list"></tbody>
+          </table>
+        </div>
+      </div>
       </div>
     `;
 
@@ -127,13 +176,16 @@
       const list      = document.getElementById('fme-bsr-results-list');
 
       if (!matches.length) {
-        list.innerHTML = `<p class="${FME.dom.selectors.CONTENT.HELP_TEXT}">Niciun rezultat găsit.</p>`;
+        list.innerHTML = `
+          <tr class="${FME.dom.content.ROW_ODD}">
+            <td colspan="2" class="${FME.dom.content.HELP_TEXT}">Niciun rezultat găsit.</td>
+          </tr>`;
       } else {
-        list.innerHTML = matches.map(m => `
-          <div class="fme-bsr-match">
-            <strong>${m.template}</strong>
-            <pre>${m.preview}</pre>
-          </div>
+        list.innerHTML = matches.map((m, i) => `
+          <tr class="${i % 2 === 0 ? FME.dom.content.ROW_ODD : FME.dom.content.ROW_EVEN}">
+            <td><strong>${m.template}</strong></td>
+            <td><pre>${m.preview}</pre></td>
+          </tr>
         `).join('');
       }
 

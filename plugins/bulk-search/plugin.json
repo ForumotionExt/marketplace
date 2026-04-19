@@ -1,7 +1,7 @@
 {
   "id": "bulk-search",
   "name": "Search & Replace",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Caută și înlocuiește text în bulk în template-urile forumului.",
   "author": "FME Team",
   "category": "moderation",
