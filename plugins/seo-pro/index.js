@@ -10,8 +10,6 @@
   link.innerHTML = `<a href="#" id="fme-tab-link">FME Plugins</a>`;
   h.querySelector('ul #admin_search').insertAdjacentElement('beforebegin', link);
 
-  MutationObserver.observe(h, { childList: true, subtree: true });
-
   h.addEventListener('click', async (e) => {
     if (e.target.matches('#fme-tab-link')) {
       e.preventDefault();
