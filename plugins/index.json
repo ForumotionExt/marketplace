@@ -31,18 +31,18 @@
       "paid": true
     },
     {
-      "id": "user-activity-tracker",
-      "name": "User Activity Tracker",
-      "version": "1.1.0",
-      "description": "Monitorizează activitatea utilizatorilor — postări, logări, timp petrecut pe forum.",
+      "id": "backup-restore",
+      "name": "Backup & Restore",
+      "version": "1.0.0",
+      "description": "Export complet (template-uri + CSS + JS Modules) într-un fișier JSON sau ZIP. Restaurare selectivă pe categorii. Forumotion nu oferă asta nativ.",
       "author": "FME Team",
-      "category": "analytics",
-      "tags": ["analytics", "users", "activity", "stats"],
-      "entry": "user-activity-tracker/plugin.json",
-      "preview": "user-activity-tracker/preview.png",
+      "category": "performance",
+      "tags": ["performance", "backup", "activity", "restore"],
+      "entry": "backup-restore/plugin.json",
+      "preview": "backup-restore/preview.png",
       "minFmeVersion": "1.4.0",
       "hooks": ["acp"],
-      "paid": false
+      "paid": true
     },
     {
       "id": "auto-moderator",
