@@ -13,7 +13,7 @@
 
   if (!FME.session.isACP()) return;
 
-  function insertNavbar() {
+  function injectNav() {
     const isThemes = FME.utils.url.param('part') === 'themes';
     if (!isThemes) return;
 
