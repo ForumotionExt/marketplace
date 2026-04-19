@@ -317,6 +317,10 @@
       }
     }
 
+    if (opts.format === 'zip') {
+        await FME.libs.loadJSZip();
+    }
+
     if (opts.css) {
       backup.css = await fetchCss();
     }
@@ -505,8 +509,6 @@
   }
 
   function init() {
-    await FME.libs.loadJSZip();
-
     injectNav();
     injectPanel();
   }
